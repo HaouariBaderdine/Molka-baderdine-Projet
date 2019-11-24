@@ -1,1 +1,37 @@
-<p>ajout-article works!</p>
+<div class="box">
+    <h2> Ajouter Article</h2>
+    <form>
+        <div>
+            <label>Matricule</label>
+            <input type="text" name="Matricule" required="true">
+        </div>
+        <div>
+            <label>Libelle</label>
+            <input type="text" name="Libelle" required="true">
+        </div>
+        <div>
+            <label>Image</label>
+            <input type="text" name="Image" required="true">
+        </div>
+        <div>
+            <label>Prix</label>   
+            <input type="text" name="prix" required="true">
+        </div>
+        <div>
+            <label>Types</label>
+            <select id="types">
+                <option *ngFor="let i of types ">
+                    {{i}}
+                </option>
+            </select> 
+        </div>
+        <div>
+            <label>Date de Fabrication</label>
+            <input type="text" name="" required="true">
+        </div>
+        <div>
+            <input type="submit" value="Ajouter">
+        </div>
+    </form>
+
+</div>

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjoutArticleComponent implements OnInit {
 
+  types:String[]=["type1","type2","type3","type4"];
+
   constructor() { }
 
   ngOnInit() {

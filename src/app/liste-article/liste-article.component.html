@@ -1,1 +1,65 @@
-<p>liste-article works!</p>
+<br/>
+    <table style="width:50%">
+        <tr>
+         <th class="c3"  colspan="5"> Liste D'articles De L'Homme</th>
+         <td class="c2" colspan="3"><button type="button" class="btn btn-primary"> AJOUTER </button></td>
+        </tr>
+        <tr class="c1">
+        <th> Id </th>
+        <th> Image</th>
+        <th> Nom</th>
+        <th> Prix</th>
+        <th> Genre</th>
+        <th> Détail</th>
+        <th> Modifier</th>
+        <th> Supprimer</th>
+       </tr>
+       <tr class="c2" *ngFor="let x of articles ; let indice=index">
+        <th class="lab">{{x.matricule}}</th>
+        <th><img [src]=x.image style="height:100px;width:140px;text-align: center;"/></th>
+        <td class="lab"> {{x.nom}}</td>
+        <ng-container *ngIf="x.percontage>0">
+        <td class="promos"> {{x.prix}} Dt </td>
+        </ng-container>
+        <ng-container *ngIf="x.percontage<=0">
+            <td class="NotPromos"> {{x.prix}} Dt </td>
+        </ng-container>
+        <td class="lab"> {{x.type}} </td>
+        <td class="lab"><button type="button" class="btn btn-outline-info"> Détail </button></td>
+        <td class="lab"><button type="button" class="btn btn-warning"> MODIFIER </button></td>
+        <td class="lab"><button type="button" (click)="supprimer(indice)" class="btn btn-danger"> SUPPRIMER </button></td>
+       </tr>
+      
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container"  *ngFor="let x of articles" >
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                       <img src="..\assets\image1.jpg">
+                       <h3>{{x.nom}}</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>{{x.prix}} :: {{x.type}}</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div> 
+        </div> -->  
+ 

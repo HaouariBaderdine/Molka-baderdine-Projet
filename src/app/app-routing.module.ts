@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'liste', component:ListeArticleComponent},  
   {path:'detail/:matricule', component:DetailComponent}, 
   {path:'supprimer', component:SupprimeComponent},  
-  {path:'', redirectTo:'Accueil', pathMatch:'full'} ,
+  {path:'', redirectTo:'login', pathMatch:'full'} ,
   {path:'**', component:ErrorComponent}
 ];
 
