@@ -19,7 +19,7 @@
         <th> Modifier</th>
         <th> Supprimer</th>
        </tr>
-       <tr class="c2" *ngFor="let x of articles ; let indice=index">
+       <tr class="c2" *ngFor="let x of articlesFemme ; let indice=index">
         <th class="lab">{{x.matricule}}</th>
         <th><img [src]=x.image style="height:100px;width:140px;text-align: center;"/></th>
         <td class="lab"> {{x.nom}}</td>
@@ -36,23 +36,3 @@
        </tr>
       
     </table>
-
-
-
-<!--<div class="container"  *ngFor="let x of articles" >
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                       <img src="..\assets\image1.jpg">
-                       <h3>{{x.nom}}</h3>
-                    </div>
-                </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>{{x.prix}} :: {{x.type}}</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div> 
-        </div> -->  
- 

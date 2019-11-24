@@ -12,6 +12,7 @@ import { DetailComponent } from './detail/detail.component';
 import { SupprimeComponent } from './supprime/supprime.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MenuComponent } from './menu/menu.component';
     DetailComponent,
     SupprimeComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    ListeFemmeComponent
   ],
   imports: [
     BrowserModule,

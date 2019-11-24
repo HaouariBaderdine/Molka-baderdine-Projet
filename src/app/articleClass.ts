@@ -1,4 +1,5 @@
 export class article{
+
     public get matricule(): number {
         return this._matricule;
     }
@@ -11,10 +12,10 @@ export class article{
     public set percontage(value: number) {
         this._percontage = value;
     }
-    public get dateFabrication(): String {
+    public get dateFabrication(): Date {
         return this._dateFabrication;
     }
-    public set dateFabrication(value: String) {
+    public set dateFabrication(value: Date) {
         this._dateFabrication = value;
     }
     public get type(): String {
@@ -52,7 +53,7 @@ export class article{
     
     constructor(
        private _matricule: number,private _nom: String,private _image: String, private _prix: number,
-       private _type: String,private _dateFabrication: String,private _promos: boolean,private _percontage: number)
+       private _type: String,private _dateFabrication: Date,private _promos: boolean,private _percontage: number)
         
        {}
    

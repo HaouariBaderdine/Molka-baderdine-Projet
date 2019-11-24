@@ -1,37 +1,68 @@
-<div class="box">
-    <h2> Ajouter Article</h2>
-    <form>
-        <div>
-            <label>Matricule</label>
-            <input type="text" name="Matricule" required="true">
-        </div>
-        <div>
-            <label>Libelle</label>
-            <input type="text" name="Libelle" required="true">
-        </div>
-        <div>
-            <label>Image</label>
-            <input type="text" name="Image" required="true">
-        </div>
-        <div>
-            <label>Prix</label>   
-            <input type="text" name="prix" required="true">
-        </div>
-        <div>
-            <label>Types</label>
-            <select id="types">
-                <option *ngFor="let i of types ">
-                    {{i}}
-                </option>
-            </select> 
-        </div>
-        <div>
-            <label>Date de Fabrication</label>
-            <input type="text" name="" required="true">
-        </div>
-        <div>
-            <input type="submit" value="Ajouter">
-        </div>
-    </form>
+<br>
+<h2> Ajouter un Article</h2>
 
-</div>
+<form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Matricule">Matricule</label>
+        <input type="text" class="form-control" id="Matricule" placeholder="Matricule">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Libelle">Libelle</label>
+        <input type="text" class="form-control" id="Libelle" placeholder="Libelle">
+      </div>
+    </div>
+    <br>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="image">
+        <label class="custom-file-label" for="image">Choose Image</label>
+    </div>
+    <br>
+    <br>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Prix">prix</label>
+            <input type="text" class="form-control" id="Prix" placeholder="Prix">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Types</label>
+            <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>        
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="date">Date De Fabrication</label>
+        <input type="date" class="form-control" id="date">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+
+    <div class="form-row">
+       <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+      </div>
+      <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch2">
+          <label class="custom-control-label" for="customSwitch2">Toggle this switch element</label>
+      </div>
+    </div>
+    <br/>
+    <span class="c1">
+    <button  type="submit" class="btn btn-primary">Sign in</button>
+    </span>
+  </form>

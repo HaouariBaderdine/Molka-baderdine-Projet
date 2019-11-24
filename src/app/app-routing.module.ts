@@ -7,6 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 import { ErrorComponent } from './error/error.component';
 import { SupprimeComponent } from './supprime/supprime.component';
 import { LoginComponent } from './login/login.component';
+import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
 
 
 const routes: Routes = [
@@ -14,9 +15,10 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'ajouter', component:AjoutArticleComponent}, 
   {path:'liste', component:ListeArticleComponent},  
+  {path:'listeFemme', component:ListeFemmeComponent},
   {path:'detail/:matricule', component:DetailComponent}, 
   {path:'supprimer', component:SupprimeComponent},  
-  {path:'', redirectTo:'login', pathMatch:'full'} ,
+  {path:'', redirectTo:'Accueil', pathMatch:'full'} ,
   {path:'**', component:ErrorComponent}
 ];
 

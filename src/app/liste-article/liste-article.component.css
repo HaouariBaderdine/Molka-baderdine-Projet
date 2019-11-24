@@ -1,5 +1,5 @@
 table{margin-left: 60px;margin-top: 30px ;}
-table, tr ,td ,th{border:solid 1px #333;border-collapse:collapse;}
+table, tr ,td ,th{border:solid 0.3px #333;border-collapse:collapse;}
 .c1{color: black; text-align: center;}
 .c2{color: black;text-align: center;}
 .c3{color: rgba(85, 29, 29, 0.76);text-align: center;}
@@ -7,8 +7,8 @@ table, tr ,td ,th{border:solid 1px #333;border-collapse:collapse;}
 .NotPromos{padding-left: 20px;padding-right: 20px;}
 .promos{ padding-left: 20px;padding-right: 20px; color: darkgreen;font-weight: bold;}
 
-
-
+nav{width: 450px;margin-left: 60px;margin-top: 20px;}
+input{width: 310px;}
 
 
 
