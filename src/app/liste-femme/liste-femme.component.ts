@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../article.service';
 import { article } from '../articleClass';
+import { ArticleFemmeService } from '../article-femme.service';
 
 @Component({
   selector: 'app-liste-femme',
@@ -11,18 +11,21 @@ export class ListeFemmeComponent implements OnInit {
 
   articlesFemme:article[];
   test:boolean=false;
+
+  constructor(private articleServiceFemme:ArticleFemmeService) { }
+
+  ngOnInit() {
+    this.articlesFemme = this.articleServiceFemme.articlesFemme;
+    console.log(this.articlesFemme[1].matricule);
+  }
+  
+  /* Rechercher */
   private _nom: String;
   public get nom(): String {
     return this._nom;
   }
   public set nom(value: String) {
     this._nom = value;
-  }
-
-  constructor(private articleService:ArticleService) { }
-
-  ngOnInit() {
-    this.articlesFemme = this.articleService.articlesFemme;
   }
 
   search(){
@@ -32,4 +35,8 @@ export class ListeFemmeComponent implements OnInit {
    } );
  }}
 
+  /* supprimer ligne d'Articles */
+  supprimer(index:number){
+    this.articleServiceFemme.supprimerArticleF(index);
+  }
 }

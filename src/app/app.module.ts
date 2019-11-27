@@ -9,7 +9,6 @@ import { ListeArticleComponent } from './liste-article/liste-article.component';
 import { AjoutArticleComponent } from './ajout-article/ajout-article.component';
 import { ErrorComponent } from './error/error.component';
 import { DetailComponent } from './detail/detail.component';
-import { SupprimeComponent } from './supprime/supprime.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
@@ -22,7 +21,6 @@ import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
     AjoutArticleComponent,
     ErrorComponent,
     DetailComponent,
-    SupprimeComponent,
     LoginComponent,
     MenuComponent,
     ListeFemmeComponent

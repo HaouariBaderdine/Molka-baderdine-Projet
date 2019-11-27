@@ -1,4 +1,3 @@
-
 <br/>
 <nav class="navbar navbar-light bg-light" >
       <input class="form-control mr-sm-2" [(ngModel)]="nom"  placeholder="Search" aria-label="Search"><button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
@@ -6,7 +5,7 @@
     
     <table style="width:50%">
         <tr>
-         <th class="c3"  colspan="5"> Liste D'articles De L'Homme</th>
+         <th class="c3"  colspan="5"> Liste D'articles De Femme</th>
          <td class="c2" colspan="3"><button type="button" class="btn btn-primary"> AJOUTER </button></td>
         </tr>
         <tr class="c1">
@@ -21,7 +20,7 @@
        </tr>
        <tr class="c2" *ngFor="let x of articlesFemme ; let indice=index">
         <th class="lab">{{x.matricule}}</th>
-        <th><img [src]=x.image style="height:100px;width:140px;text-align: center;"/></th>
+        <th><img [src]="x.image" style="height:100px;width:140px;text-align: center;"/></th>
         <td class="lab"> {{x.nom}}</td>
         <ng-container *ngIf="x.percontage>0">
         <td class="promos"> {{x.prix}} Dt </td>
