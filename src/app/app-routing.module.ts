@@ -13,10 +13,10 @@ const routes: Routes = [
   {path:'Accueil', component:AccueilComponent},  
   {path:'login', component:LoginComponent},
   {path:'ajouter', component:AjoutArticleComponent}, 
-  {path:'liste', component:ListeArticleComponent},  
+  {path:'listeHomme', component:ListeArticleComponent},  
   {path:'listeFemme', component:ListeFemmeComponent},
   {path:'detail/:matricule', component:DetailComponent}, 
-  {path:'', redirectTo:'login', pathMatch:'full'} ,
+  {path:'', redirectTo:'Accueil', pathMatch:'full'} ,
   {path:'**', component:ErrorComponent}
 ];
 

@@ -36,9 +36,25 @@ addArticleF(x:number,a:String,b:String,c: number,d:number,e: String,f: Date,g: b
       return false;
     }
   }
+
 supprimerArticleF(index:number)
 {
   this.articlesFemme.splice(index,1);
+}
+
+getLastMatriculeF(){
+  return this.articlesFemme[this.articlesFemme.length-1].matricule;
+}
+
+addArticleFemme(nom:String,image:String,prix:number,type:String,solde:boolean,personatge:number)
+{
+  if((this.getArticleByMatriculeF(this.getLastMatriculeF()))==null)
+  {
+    return false;
+  }else{
+    this.articlesFemme.push(new article(this.getLastMatriculeF()+1,nom,image,prix,type,new Date(2017,4,15),solde,personatge));
+    return true;
+  }
 }
 
   constructor() { }

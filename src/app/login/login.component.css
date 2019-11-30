@@ -1,4 +1,6 @@
-.body{background-color:white; 
+.body{background-image: url(src\assets\image1.jpg); 
+    width: 800px;
+    height: 600px;
     background-size: cover;
     font-family: Tahoma , genova , sans-serif;
     color:black;}
@@ -95,13 +97,7 @@
     left: 45%;
     transform: translate(-50%,-50%);
  }
- img{
-    width: 100px;
-    height: 60px;
-    text-align:center;
-    position: absolute;
-    top: 3%;
-    left: 5%;}
+ 
  .a{
     text-align:center;
     position: absolute;

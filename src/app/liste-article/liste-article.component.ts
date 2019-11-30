@@ -26,7 +26,7 @@ export class ListeArticleComponent implements OnInit {
   supprimer(index:number){
     this.articleService.supprimerArticle(index)
   }
-  
+
   get nom(){
     return this._nom;
   }

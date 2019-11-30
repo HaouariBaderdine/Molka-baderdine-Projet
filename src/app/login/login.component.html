@@ -1,3 +1,8 @@
+<div *ngIf="verifier==true">
+    <app-menu></app-menu>
+    <router-outlet></router-outlet>
+</div>
+
 <div *ngIf="verifier==false">
     <div class="body">
         <div class="signin">
@@ -15,10 +20,8 @@
         </div>
     </div>
 </div>
-<div *ngIf="verifier==true">
 
-    <app-menu></app-menu>
-    <router-outlet></router-outlet>
+
 
   <!--
     <div id="body1">
@@ -29,4 +32,3 @@
         <span  class="a"><a [routerLink]="['/Accueil']" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a></span>
       </div> 
   -->
-</div>

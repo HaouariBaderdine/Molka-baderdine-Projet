@@ -1,13 +1,16 @@
-
-<br/>
+<br>
 <nav class="navbar navbar-light bg-light" >
-      <input class="form-control mr-sm-2" [(ngModel)]="nom"  placeholder="Search" aria-label="Search"><button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
+      <input class="form-control mr-sm-2" [(ngModel)]="nom" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
 </nav>
-    
-    <table style="width:50%">
+    <table>
         <tr>
-         <th class="c3"  colspan="5"> Liste D'articles De L'Homme</th>
-         <td class="c2" colspan="3"><button type="button" class="btn btn-primary"> AJOUTER </button></td>
+         <td class="c2" colspan="2"><button type="button" [routerLink]="['/ajouter']" class="btn btn-primary"> + AJOUTER </button></td>
+         <th class="c3"  colspan="6"> Liste D'articles Des Hommes</th>
+        </tr>
+        <tr>
+            <td colspan="8"></td>
+            <td colspan="8"></td>
         </tr>
         <tr class="c1">
         <th> Id </th>
@@ -36,8 +39,6 @@
        </tr>
       
     </table>
-
-
 
 <!--<div class="container"  *ngFor="let x of articles" >
             <div class="card">

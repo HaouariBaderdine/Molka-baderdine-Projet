@@ -13,7 +13,7 @@ export class ArticleService {
     new article(4,"article4","../assets/image1.jpg",2010 ,"type4",new Date(2017,2,26),false,0)
   ];
 
- 
+ /*   retourner l'objet dont la matricule donne en parametre */ 
   getArticleByMatricule(mat : number){
       
     for(let i=0;i<this.lesArticles.length;i++)
@@ -22,16 +22,40 @@ export class ArticleService {
     {
       return (this.lesArticles[i]);
     }
-  }
+  } return null;
  }
 
-addArticle(x:number,a:String,b:String,c: number,d:number,e: String,f: Date,g: boolean,h: number)
-  {
-    this.lesArticles.push(new article(x,a,b,c,e,f,g,h));
+
+  getLastMatricule(){
+    return this.lesArticles[this.lesArticles.length-1].matricule;
   }
 
-mofifierArticle(a:String,b:String,c: number,e: String,f: Date,g: boolean,h: number)
-  {} 
+  addArticleHomme1(nom:String,image:String,prix:number,type:String,solde:boolean,personatge:number)
+  {
+    if((this.getArticleByMatricule(this.getLastMatricule()))==null)
+    {
+      return false;
+    }else{
+      this.lesArticles.push(new article(this.getLastMatricule()+1,nom,image,prix,type,new Date(2017,4,15),solde,personatge));
+      return true;
+    }
+  }
+
+  addArticleHomme(nom:String,image:String,prix:number,type:String,date:Date,solde:boolean,personatge:number)
+  {
+    if((this.getArticleByMatricule(this.getLastMatricule()))==null)
+    {
+      return false;
+    }else{
+      this.lesArticles.push(new article(this.getLastMatricule()+1,nom,image,prix,type,date,solde,personatge));
+      return true;
+    }
+  }
+
+mofifierArticle(nom:String,image:String,prix:number,type:String,solde:boolean,personatge:number)
+  {
+    return this.lesArticles;
+  } 
 
 supprimerArticle(index:number)
 {
