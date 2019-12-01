@@ -2,7 +2,14 @@
 *{  
     font-family: 'Open Sans','sans-serif';
 }
-#id1{
+/*.c1{
+    background-image: url('src/assets/back2.jpg');
+    background-size: 1000px 900px;
+    background-repeat: no-repeat;
+}*/
+#id1{    background-image: url('src/assets/back2.jpg');
+    background-size: 1350px 800px;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;

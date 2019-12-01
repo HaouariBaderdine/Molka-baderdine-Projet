@@ -1,34 +1,34 @@
-<div *ngIf="verifier==true">
-    <app-menu></app-menu>
-    <router-outlet></router-outlet>
-</div>
-
 <div *ngIf="verifier==false">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a style="color: beige;"class="navbar-brand">B&M</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                  <ul class="navbar-nav mr-auto">
+                    <li>
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+          
     <div class="body">
         <div class="signin">
             <form name="f">
-                <h2 style="color:darkred"> Log In </h2>
-                <input type="text" name="username" placeholder="Username" [(ngModel)]="name" id="t1" required>
-                <input type="Password" name="pass" placeholder="Password" [(ngModel)]="password" id="t2" required><br><br>
-                 <a><input type="button" (click)="onCnnecte()" value="Log In"></a><br/><br>
-                <div id="container">
-                  <a  style="margin-right: 0px;font-size: 13px; font-family: tahoma genova sans-serif;">Reset Password ||</a>
-                  <a  style="margin-right: 0px;font-size: 13px; font-family: tahoma genova sans-serif;">Forget Password</a>
-                </div> <br><br><br><br>
-              Don't have account? <a>&nbsp;Sign Up</a>
+                <h2 style="color:rgb(21, 44, 71)"> Connexion </h2>
+                <input type="text" name="username" placeholder="nom d'utilisateur" [(ngModel)]="name" id="t1" required>
+                <input type="Password" name="pass" placeholder="mot de passe" [(ngModel)]="password" id="t2" required><br><br>
+                 <a><input type="button" (click)="onCnnecte()" value="Se connecter"></a><br/><br>
             </form>
         </div>
     </div>
 </div>
+<div *ngIf="verifier==true">
+
+    <app-menu></app-menu>
+    <router-outlet></router-outlet>
 
 
-
-  <!--
-    <div id="body1">
-        <div class="contener">
-         <span class="text1"> Welcome </span>
-         <span class="text2">To Haouari Voyage</span>
-        </div>
-        <span  class="a"><a [routerLink]="['/Accueil']" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a></span>
-      </div> 
-  -->
+</div>
