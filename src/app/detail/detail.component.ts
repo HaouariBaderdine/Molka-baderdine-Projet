@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArticleService } from '../article.service';
+import { article } from '../articleClass';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
+  mat:number;
+  x:article;
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute,
+             private serviceHomme:ArticleService) { }
 
   ngOnInit() {
+    this.mat=this.activatedRoute.snapshot.params['matricule'];
+    this.x=this.serviceHomme.getArticleByMatricule(this.mat);
   }
 
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'ajouter', component:AjoutArticleComponent}, 
   {path:'listeHomme', component:ListeArticleComponent},  
   {path:'listeFemme', component:ListeFemmeComponent},
-  {path:'detail/:matricule', component:DetailComponent}, 
+  {path:'listeHomme/:matricule', component:DetailComponent}, 
   {path:'', redirectTo:'Accueil', pathMatch:'full'} ,
   {path:'**', component:ErrorComponent}
 ];
