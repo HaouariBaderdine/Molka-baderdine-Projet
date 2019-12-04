@@ -7,6 +7,8 @@ import { DetailComponent } from './detail/detail.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
 import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
+import { ModifierComponent } from './modifier/modifier.component';
+import { DetailFemmeComponent } from './detail-femme/detail-femme.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path:'ajouter', component:AjoutArticleComponent}, 
   {path:'listeHomme', component:ListeArticleComponent},  
   {path:'listeFemme', component:ListeFemmeComponent},
+  {path:'modifier', component:ModifierComponent},
   {path:'listeHomme/:matricule', component:DetailComponent}, 
+  {path:'listeFemme/:matricule', component:DetailFemmeComponent}, 
   {path:'', redirectTo:'Accueil', pathMatch:'full'} ,
   {path:'**', component:ErrorComponent}
 ];

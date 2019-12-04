@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   name:String="";
   password:String="";
   verifier:boolean=false;
+  test:number;
   constructor(private logService:LogService) { }
   comptes:compte[];
 
@@ -21,11 +22,14 @@ export class LoginComponent implements OnInit {
   onCnnecte() {
     if((this.logService.connecter(this.name,this.password))==true)
     {
-      console.log("Log in coorecte");
+      alert("Log in coorecte");
       this.verifier=true;
     }else{
       console.log("retapper vos données");
       this.verifier=false;
+      this.test=0;
+      this.name="";
+      this.password="";
     }
   }
 

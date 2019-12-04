@@ -6,7 +6,7 @@
     <table>
         <tr>
          <td class="c2" colspan="2"><button type="button" [routerLink]="['/ajouter']" class="btn btn-primary"> + AJOUTER </button></td>
-         <th class="c3"  colspan="6"> Liste D'articles Des Hommes</th>
+         <th class="c3"  colspan="3"> Liste D'articles Des Hommes</th>
         </tr>
         <tr>
             <td colspan="8"></td>
@@ -17,14 +17,14 @@
         <th> Image</th>
         <th> Nom</th>
         <th> Prix</th>
-        <th> Genre</th>
+  
         <th> Détail</th>
-        <th> Modifier</th>
+ 
         <th> Supprimer</th>
        </tr>
        <tr class="c2" *ngFor="let x of articles ; let indice=index">
         <th class="lab">{{x.matricule}}</th>
-        <th><img [src]=x.image style="height:100px;width:140px;text-align: center;"/></th>
+        <th><img [src]=x.image style="height:190px;width:180px;text-align: center;"/></th>
         <td class="lab"> {{x.nom}}</td>
         <ng-container *ngIf="x.percontage>0">
         <td class="promos"> {{x.prix}} Dt </td>
@@ -32,10 +32,9 @@
         <ng-container *ngIf="x.percontage<=0">
             <td class="NotPromos"> {{x.prix}} Dt </td>
         </ng-container>
-        <td class="lab"> {{x.type}} </td>
+
         
-        <td class="lab"><button type="button"  class="btn btn-outline-info"> <a [routerLink]="['/liste', x.matricule]" >Détail</a>  </button></td>
-        <td class="lab"><button type="button" class="btn btn-warning"> MODIFIER </button></td>
+        <td class="lab"><button type="button"  class="btn btn-outline-info"> <a [routerLink]="['/listeHomme', x.matricule]" >Détail</a>  </button></td>
         <td class="lab"><button type="button" (click)="supprimer(indice)" class="btn btn-danger"> SUPPRIMER </button></td>
        </tr>
       

@@ -12,6 +12,8 @@ import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
+import { ModifierComponent } from './modifier/modifier.component';
+import { DetailFemmeComponent } from './detail-femme/detail-femme.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
     DetailComponent,
     LoginComponent,
     MenuComponent,
-    ListeFemmeComponent
+    ListeFemmeComponent,
+    ModifierComponent,
+    DetailFemmeComponent
   ],
   imports: [
     BrowserModule,

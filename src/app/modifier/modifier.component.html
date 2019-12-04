@@ -1,0 +1,120 @@
+<div id="id1">
+    <form #f="ngForm" (ngSubmit)="onChange(f)">
+
+    <!--Choisir sexe-->
+    <div  class="form-group">
+            <input type="radio" name="r1" value="Homme" [(ngModel)]="sexe">
+                Homme&nbsp;&nbsp;&nbsp;
+            <input type="radio"  name="r1" value="Femme" [(ngModel)]="sexe">
+                Femme
+        </div>    
+     
+    <!--selection-->   
+    <div *ngIf="sexe=='Homme'" class="form-group">
+            <label for="se1">
+                Selectionner liste
+            </label>
+            <select (change)="onChangeS(f)" name="se" id="se1"  class="form-control" [(ngModel)]="selectArticle">
+                <option [value]="y.matricule" *ngFor="let y of articles ; let i= index">
+                    {{y.nom}}
+                </option>
+            </select>
+        </div>
+<div *ngIf="sexe=='Femme'" class="form-group">
+            <label for="seF1">
+                Selectionner liste
+            </label>
+            <select (change)="onChangeF(f)" name="seF" id="seF1"  class="form-control" [(ngModel)]="selectArticle">
+                <option [value]="y.matricule" *ngFor="let y of articlesF ; let i= index">
+                    {{y.nom}}
+                </option>
+            </select>
+        </div>
+        <!-- Le Nom d'article------------------------------------------------>
+        <h2>Ajouter d'un Produit</h2>
+    <div class="form-group">
+        <label for="nom">
+            Nom Article
+        </label>
+        <input type="text" id="nom" name="c1" class="form-control" placeholder="nom Article"
+         [(ngModel)]="nom" required="true" #nomE="ngModel" pattern="[A-Z][a-zA-Z]+">
+        <div [hidden]="!nomE.errors?.required || nomE.pristine" class="alert alert-danger">
+            le nom est un champ obligatoire
+        </div>
+        <div *ngIf="nomE.errors?.pattern && nomE.dirty" class="alert alert-danger">
+            Le nom doit commencer par un majuscule suivie d'au moins 1 caractére
+        </div>
+    </div>
+    
+        <!-- La date de fabrication d'article------------------------------------------------>
+    <div class="form-group">
+        <label for="date">
+            Date de Fabrication
+        </label>
+        <input type="text" id="date"name="c2" class="form-control" placeholder="Date de Fabrication"
+         [(ngModel)]="date" #dateE="ngModel">
+        <div [hidden]="!dateE.errors?.required || dateE.pristine" class="alert alert-danger">
+            la date est un champ obligatoire
+        </div>
+    </div>
+    
+    <!-- L'image d'article------------------------------------------------>
+    <div class="form-group">
+        <label for="img">
+            Chemin d'image
+        </label>
+        <input type="text" id="img" name="c3" class="form-control" placeholder="Chemin d'image"
+         [(ngModel)]="image" required="true" #imgE="ngModel" >
+        <div [hidden]="!imgE.errors?.required || imgE.pristine" class="alert alert-danger">
+            l' image est un champ obligatoire
+        </div>
+    </div>
+    <!-- Prix d'article------------------------------------------------>
+    <div class="form-group">
+        <label for="Prix">
+            Prix d'article
+        </label>
+        <input type="number" id="Prix" name="c4" class="form-control" placeholder="Prix d'article"
+         [(ngModel)]="prix" required="true" #prixE="ngModel" >
+        <div [hidden]="!prixE.errors?.required || prixE.pristine" class="alert alert-danger">
+            le prix est un champ obligatoire
+        </div>
+    </div>
+    
+    <!-- type d'article------------------------------------------------>
+    <div class="form-group">
+        <label for="Type">
+            type d'article
+        </label>
+        <select id="Type" name="c5" [(ngModel)]="type" class="form-control">
+          <option [value]="x" *ngFor="let x of types">{{x}}</option>
+        </select>
+    </div>
+    
+    <!-- solde d'article------------------------------------------------>
+    <div class="form-group">
+        <input type="checkbox" id="solde" name="c6" [value]="true" [(ngModel)]="promos">
+        <label for="solde">
+          Mettre en Solde
+        </label>
+        &nbsp;&nbsp;&nbsp;
+        <span *ngIf="promos==true">
+                <label for="perso">
+                        Donnez la percentage de promos
+                   </label>
+                <input type="number" id="perso" name="c7" required placeholder="0" [(ngModel)]="pers">    
+        </span>
+    </div>
+    <!--      sexe ------------------------------------------------------------>   
+    
+       <!-- Les bottons submit et reset-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <input type="submit" value="Change" name="submit" class="btn btn-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <input type="reset" value="Vider" class="btn btn-danger" name="reset">
+       <br>
+       <br>
+          
+    </form>
+    </div>
+    
+   
+      

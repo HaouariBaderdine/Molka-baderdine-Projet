@@ -1,1 +1,96 @@
-<p>detail works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+
+                <div class="card-body">
+                    <div class="card-title mb-4">
+                        <div class="d-flex justify-content-start">
+                            <div class="image-container">
+                                <img src="../assets/article_homme/art{{x.matricule}}.jpg" id="imgProfile" style="width: 160px; height: 160px" class="img-thumbnail" />
+                            </div>
+                            <div class="image-container">
+                                <img [src]=x.image id="imgProfile" style="width: 160px; height: 160px" class="img-thumbnail" />
+                            </div>
+                            <div class="userData ml-3">
+                                <br>
+                                <h2 class="d-block" style="font-size: 1.5rem;color:darkslategray; font-weight: bold">{{x.nom|uppercase}}</h2>
+                                <h6 class="d-block"><span style="color:crimson">Identifiant :</span> {{x.matricule}}</h6>
+                                <h6 class="d-block"><span style="color:crimson">Prix :</span> {{x.prix| currency}}</h6>
+                            </div>
+                            
+                            <div class="ml-auto">
+                                <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content ml-1" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                    
+
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;"> Name</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            {{x.nom |uppercase}}
+                                        </div>
+                                    </div>
+                                    <hr />
+
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;"> Composition</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            {{x.type}} 100%
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;">Date de Fabrication</label>
+                                        </div>
+                                        <div class="col-md-8 col-6">
+                                            {{x.dateFabrication|date}}
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div *ngIf="x.percontage>0" class="row">
+                                        <div class="col-sm-3 col-md-2 col-5">
+                                            <label style="font-weight:bold;"> Promos</label>
+                                        </div>
+                                        <div style="color: green;" class="col-md-8 col-6">
+                                            En Promotion {{x.percontage}}%
+                                        </div>
+                                    </div>
+                                    <div *ngIf="x.percontage==0" class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Promos</label>
+                                            </div>
+                                            <div style="color: red;" class="col-md-8 col-6">
+                                                N'est pas en prmotion
+                                            </div>
+                                        </div>
+                                    <hr />
+                                    <hr />
+                                </div>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-outline-primary" [routerLink]="['/listeHomme']"><i class="glyphicon glyphicon-menu-left"></i>RETOUR</button>
+            </div>
+        </div>
+    </div>
+</div>

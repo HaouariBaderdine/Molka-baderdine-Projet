@@ -8,10 +8,10 @@ export class ArticleFemmeService {
 
   
   articlesFemme:article[]= [
-    new article(1001,"femme1","../assets/image1.jpg",20450 ,"type1",new Date(2018,5,27),true,0),
-    new article(1002,"femme3","../assets/image1.jpg",45000 ,"type2",new Date(2017,5,6),true,0),
-    new article(1003,"femme2","../assets/image1.jpg",20504 ,"type3",new Date(2019,10,27),false,0),
-    new article(1004,"femme4","../assets/image1.jpg",20100 ,"type4",new Date(2018,9,13),false,10)
+    new article(1,"Pull col roulé","../assets/article_femme/a1.jpg",20450 ,"Acrylique",new Date(2018,5,27),true,0),
+    new article(2,"Robe longue ","../assets/article_femme/a2.jpg",45000 ,"Polyster",new Date(2017,5,6),true,0),
+    new article(3,"Pull en maille fine","../assets/article_femme/a3.jpg",20504 ,"Polyster",new Date(2019,10,27),false,0),
+    new article(4,"Manteau en laine","../assets/article_femme/a4.jpg",20100 ,"Laine",new Date(2018,9,13),false,10)
   ];
  
   getArticleByMatriculeF(mat : number){
@@ -55,6 +55,25 @@ addArticleFemme(nom:String,image:String,prix:number,type:String,solde:boolean,pe
     this.articlesFemme.push(new article(this.getLastMatriculeF()+1,nom,image,prix,type,new Date(2017,4,15),solde,personatge));
     return true;
   }
+}
+public modifierArticleF(mat:number, nom:String,image:String,prix:number,type:String,date:Date,solde:boolean,personatge:number){
+
+  const x=this.getArticleByMatriculeF(mat);
+  if(x!=null)
+  {
+    x.nom=nom;
+    x.image=image;
+    x.prix=prix;
+    x.type=type;
+    x.dateFabrication=date;
+    x.promos=solde;
+    x.percontage=personatge;
+
+    return true;
+  }else{
+    return false;
+  }
+  
 }
 
   constructor() { }

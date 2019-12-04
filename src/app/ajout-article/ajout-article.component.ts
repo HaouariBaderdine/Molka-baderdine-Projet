@@ -10,7 +10,7 @@ import { ArticleFemmeService } from '../article-femme.service';
 })
 export class AjoutArticleComponent implements OnInit {
 
-  types:String[]=["type1","type2","type3","type4"];
+  types:String[]=["Acrylique","Cotton","Polyster","Laine"];
 
   //attribut sexe
   sexe:string="homme";
