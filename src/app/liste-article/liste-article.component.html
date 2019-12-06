@@ -1,59 +1,27 @@
-<br>
 <nav class="navbar navbar-light bg-light" >
-      <input class="form-control mr-sm-2" [(ngModel)]="nom" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
+    <input class="form-control mr-sm-2" [(ngModel)]="nom" placeholder=" Nom d'article " aria-label="Search">
 </nav>
-    <table>
-        <tr>
-         <td class="c2" colspan="2"><button type="button" [routerLink]="['/ajouter']" class="btn btn-primary"> + AJOUTER </button></td>
-         <th class="c3"  colspan="3"> Liste D'articles Des Hommes</th>
-        </tr>
-        <tr>
-            <td colspan="8"></td>
-            <td colspan="8"></td>
-        </tr>
-        <tr class="c1">
-        <th> Id </th>
-        <th> Image</th>
-        <th> Nom</th>
-        <th> Prix</th>
-  
-        <th> Détail</th>
- 
-        <th> Supprimer</th>
-       </tr>
-       <tr class="c2" *ngFor="let x of articles ; let indice=index">
-        <th class="lab">{{x.matricule}}</th>
-        <th><img [src]=x.image style="height:190px;width:180px;text-align: center;"/></th>
-        <td class="lab"> {{x.nom}}</td>
-        <ng-container *ngIf="x.percontage>0">
-        <td class="promos"> {{x.prix}} Dt </td>
-        </ng-container>
-        <ng-container *ngIf="x.percontage<=0">
-            <td class="NotPromos"> {{x.prix}} Dt </td>
-        </ng-container>
 
-        
-        <td class="lab"><button type="button"  class="btn btn-outline-info"> <a [routerLink]="['/listeHomme', x.matricule]" >Détail</a>  </button></td>
-        <td class="lab"><button type="button" (click)="supprimer(indice)" class="btn btn-danger"> SUPPRIMER </button></td>
-       </tr>
-      
-    </table>
+<nav class="navbar navbar-light bg-light" >
+    <input class="form-control mr-sm-2" [(ngModel)]="nom1"  placeholder=" Composition d'article" aria-label="Search">
+</nav>
 
-<!--<div class="container"  *ngFor="let x of articles" >
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                       <img src="..\assets\image1.jpg">
-                       <h3>{{x.nom}}</h3>
-                    </div>
-                </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>{{x.prix}} :: {{x.type}}</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div> 
-        </div> -->  
  
+<div id="article" class="card-deck" >
+    <div class="card" *ngFor="let x of articles | articleFilter:nom1 | articleFilter1:nom; let indice=index" >
+      <img class="card-img-top" [src]=x.image alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{x.nom|uppercase}}</h5>
+        <ng-container *ngIf="x.percontage>0"><p style="color: green;font-weight: bold;" class="card-text"> {{x.prix| currency}}</p></ng-container>
+        <ng-container *ngIf="x.percontage==0"><p style="color: red;" class="card-text"> {{x.prix| currency}}</p></ng-container>
+        <p class="card-text"><small class="text-muted"></small>{{x.type}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">action</small>
+      <button type="button"   class="btn btn-outline-info"> <a [routerLink]="['/listeHomme', x.matricule]" ><i class="fas fa-info-circle"></i></a>  </button>
+      <button type="button" (click)="supprimer(indice)" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+  </div>

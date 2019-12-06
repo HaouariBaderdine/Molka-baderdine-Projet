@@ -1,22 +1,27 @@
 
 form{
-    background: yellow;
-    background: -webkit-linear-gradient(to right,yellow,green );
-    background: linear-gradient(to right,yellow,green );
+    background:  white;
     margin-top: 50px;
-    margin-left: 150px;
-    margin-right: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
     padding: 50px;
     width: 1100px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+
+}
+#button{
+    background:  white;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 50px;
+    width: 1100px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 
 }
 h2 {
     text-align: center;
     color: #255784;
-    /*background: #255784;
-    background: -webkit-linear-gradient(to right,#255784,#ff0057 );
-    background: linear-gradient(to right,#255784,#ff0057 );*/
 }
 .c1{
     margin-left: 47%;

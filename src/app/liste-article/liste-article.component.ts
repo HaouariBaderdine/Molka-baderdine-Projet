@@ -13,15 +13,9 @@ export class ListeArticleComponent implements OnInit {
   articles:article[];
   test:boolean=false;
   private  _nom:String;
+  nom1:String;
 
   constructor(private articleService:ArticleService) { }
-
- search(){
-   if(this.nom!=""){
-    this.articles = this.articles.filter(res=>{
-    return res.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
-  } );
-}}
 
   supprimer(index:number){
     this.articleService.supprimerArticle(index)

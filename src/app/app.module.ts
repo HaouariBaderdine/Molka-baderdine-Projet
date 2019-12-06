@@ -14,6 +14,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ListeFemmeComponent } from './liste-femme/liste-femme.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { DetailFemmeComponent } from './detail-femme/detail-femme.component';
+import { ArticleFilterPipe } from './article-filter.pipe';
+import { ArticleFilter1Pipe } from './article-filter1.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DetailFemmeComponent } from './detail-femme/detail-femme.component';
     MenuComponent,
     ListeFemmeComponent,
     ModifierComponent,
-    DetailFemmeComponent
+    DetailFemmeComponent,
+    ArticleFilterPipe,
+    ArticleFilter1Pipe
   ],
   imports: [
     BrowserModule,

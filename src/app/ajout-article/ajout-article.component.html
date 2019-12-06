@@ -6,8 +6,8 @@
     <label for="nom">
         Nom Article
     </label>
-    <input type="text" id="nom" name="c1" class="form-control" placeholder="nom Article"
-     [(ngModel)]="nom" required="true" #nomE="ngModel" pattern="[A-Z][a-zA-Z]+">
+    <input type="text" id="nom" name="c1" class="form-control" placeholder="Nom Article"
+     [(ngModel)]="nom" required="true" #nomE="ngModel" pattern="[A-Z][ a-zA-Z]+">
     <div [hidden]="!nomE.errors?.required || nomE.pristine" class="alert alert-danger">
         le nom est un champ obligatoire
     </div>
@@ -22,8 +22,8 @@
         Date de Fabrication
     </label>
     <input type="text" id="date"name="c2" class="form-control" placeholder="Date de Fabrication"
-     [(ngModel)]="date" #dateE="ngModel" pattern="[A-Z][a-zA-Z]+">
-    <div [hidden]="!dateE.errors?.required || dateE.pristine" class="alert alert-danger">
+     [(ngModel)]="date" #dateE="ngModel" required >
+    <div [hidden]="dateE.errors?.required || dateE.dirty" class="alert alert-danger">
         la date est un champ obligatoire
     </div>
 </div>
@@ -31,11 +31,11 @@
 <!-- L'image d'article------------------------------------------------>
 <div class="form-group">
     <label for="img">
-        Chemin d'image
+        Chemin d'image Exp:../assets/article_femme/a5.jpg
     </label>
-    <input type="text" id="img" name="c3" class="form-control" placeholder="Chemin d'image"
+    <input type="text" id="img" name="c3" class="form-control" placeholder="Chemin d'image : ../assets/article/image.jpgs"
      [(ngModel)]="image" required="true" #imgE="ngModel" >
-    <div [hidden]="!imgE.errors?.required || imgE.pristine" class="alert alert-danger">
+    <div [hidden]="imgE.errors?.required || imgE.dirty" class="alert alert-danger">
         l' image est un champ obligatoire
     </div>
 </div>
@@ -46,7 +46,7 @@
     </label>
     <input type="number" id="Prix" name="c4" class="form-control" placeholder="Prix d'article"
      [(ngModel)]="prix" required="true" #prixE="ngModel" >
-    <div [hidden]="!prixE.errors?.required || prixE.pristine" class="alert alert-danger">
+    <div [hidden]="prixE.errors?.required || prixE.dirty" class="alert alert-danger">
         le prix est un champ obligatoire
     </div>
 </div>
@@ -56,14 +56,17 @@
     <label for="Type">
         type d'article
     </label>
-    <select id="Type" name="c5" [(ngModel)]="type" class="form-control">
+''    <select id="Type" name="c5" [(ngModel)]="type" class="form-control" required  #Type="ngModel" >
       <option [value]="x" *ngFor="let x of types">{{x}}</option>
     </select>
+    <div [hidden]="Type.errors?.required || Type.dirty" class="alert alert-danger">
+        le type est un champ obligatoire
+    </div>
 </div>
 
 <!-- solde d'article------------------------------------------------>
 <div class="form-group">
-    <input type="checkbox" id="solde" name="c6" [value]="true" [(ngModel)]="promos">
+    <input type="checkbox" id="solde" name="c6" [value]="true" [(ngModel)]="promos" >
     <label for="solde">
       Mettre en Solde
     </label>
@@ -93,10 +96,12 @@
 </form>
 </div>
 
-<div *ngIf="submitted==true">
+<div id="button" *ngIf="submitted==true">
     <br><br>
     <div id="btn">
-        <span>L'employé {{this.nom}} a été ajouté avec succés</span>
+        <div>
+            <span class="alert alert-succes">L'employé {{this.nom}} a été ajouté avec succés </span>
+        </div>
         <button (click)="onVueAjout()"class="btn btn-primary" name="d1"> Ajouter un autre employé </button>
     </div>    
     <div class="homme">
@@ -117,7 +122,7 @@
              Liste des Articles Femmes 
             </a>
     </div>                   
-    
+  
 </div>
  
   

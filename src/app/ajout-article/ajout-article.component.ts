@@ -18,9 +18,8 @@ export class AjoutArticleComponent implements OnInit {
   nom:String;
   image:String;
   prix:number;
-  type:String="type1";
-  //date:Date=new Date(2017,4,15);
-  date:String;
+  type:String;
+  date: string | number | Date;
   promos:boolean=false;
   pers:number=0;
   //
@@ -30,11 +29,14 @@ export class AjoutArticleComponent implements OnInit {
 
   constructor(private serviceHomme:ArticleService,private serviceFemme:ArticleFemmeService,private router:Router) { }
 
-  ngOnInit(){  }
+  ngOnInit(){ 
+
+  }
   
   //ajouter un employer
   onCreate()
   {
+    console.log(this.image);
     if(this.sexe=="homme"){
     if((this.serviceHomme.addArticleHomme1(this.nom,this.image,this.prix,this.type,this.promos,this.pers))==true)
     {
@@ -52,12 +54,16 @@ export class AjoutArticleComponent implements OnInit {
        console.log(" ajout d'article femme est non valid");
       }
     }
-    }
+}
 // functions de routing
 onVueAjout(){
   this.router.navigate(['/ajouter']);
   this.submitted=false;
   this.nom="";
+  this.image="";
+  this.date="";
+  this.prix=null;
+  this.type="";
 }
 onVueHomme(){
   this.router.navigate(['/listeHomme']);

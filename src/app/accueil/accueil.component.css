@@ -11,11 +11,13 @@
     background-size: 1350px 800px;
     background-repeat: no-repeat;
     display: flex;
+    margin-left: 80px;
     justify-content: center;
     align-items: center;
     min-height: 90vh;
 }
 .square{
+    
     position: relative;
     width: 320px;
     height: 320px;

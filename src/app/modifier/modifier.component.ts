@@ -11,27 +11,30 @@ import { Router } from '@angular/router';
 export class ModifierComponent implements OnInit {
 
   constructor(private serviceHomme:ArticleService,private serviceFemme:ArticleFemmeService,private router:Router) { }
+  ngOnInit() {
+    this.articles=this.serviceHomme.lesArticles;
+    this.articlesF=this.serviceFemme.articlesFemme;
+  }
 
-
-  types:String[]=["type1","type2","type3","type4"];
-
+  types:String[]=["Acrylique","Cotton","Polyster","Laine"];
   articles: any;
   articlesF:any;
 
   //attribut sexe
   sexe:string="Femme";
-  // attributs de formilaire
-  nom:String;
-  image:String;
-  prix:number;
-  type:String;
-  date:any;
-  promos:boolean;
-  pers:number;
-  //
-  submitted:boolean;
-  message:String;
-  //
+
+ // attributs de formilaire
+ nom:String="Nom d'article";
+ image:String="Chemin d'image ";
+ prix:number= 0 ;
+ type:String=" type d'article";
+ date: any=" Date de Fabrication";
+ promos:boolean=false;
+ pers:number=0;
+ //
+ submitted:boolean=false;
+ message:String="";
+ //
   selectArticle:number;
   
 
@@ -89,24 +92,12 @@ export class ModifierComponent implements OnInit {
   if(this.serviceHomme.modifierArticle(this.selectArticle,this.nom,this.image,this.prix,this.type,this.date,this.promos,this.pers)
   ){
   this.submitted=true; 
-  this.onSexe();
- 
-  }
+  this.onSexe();}
 }else{
   if(this.serviceFemme.modifierArticleF(this.selectArticle,this.nom,this.image,this.prix,this.type,this.date,this.promos,this.pers)
   ){
   this.submitted=true; 
   this.onSexe();
- 
-  }
-
-}
-}
-
-
-  ngOnInit() {
-    this.articles=this.serviceHomme.lesArticles;
-    this.articlesF=this.serviceFemme.articlesFemme;
-  }
-
+ }
+}}
 }
