@@ -8,7 +8,7 @@
 
      
     <div id="article" class="card-deck" >
-        <div class="card" *ngFor="let x of articlesFemme  | articleFilter:nom1 | articleFilter1:nom ; let indice=index" >
+        <div class="row" *ngFor="let x of articlesFemme  | articleFilter:nom1 | articleFilter1:nom ; let indice=index" >
           <img class="card-img-top" [src]=x.image alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{x.nom|uppercase}}</h5>
