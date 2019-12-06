@@ -1,10 +1,14 @@
 <nav class="navbar navbar-light bg-light" >
-        <input class="form-control mr-sm-2" [(ngModel)]="nom" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" type="submit">Search</button>
-    </nav>
+    <input class="form-control mr-sm-2" [(ngModel)]="nom" placeholder=" Nom d'article " aria-label="Search">
+</nav>
+
+<nav class="navbar navbar-light bg-light" >
+    <input class="form-control mr-sm-2" [(ngModel)]="nom1"  placeholder=" Composition d'article" aria-label="Search">
+</nav>
+
      
     <div id="article" class="card-deck" >
-        <div class="card" *ngFor="let x of articlesFemme ; let indice=index" >
+        <div class="card" *ngFor="let x of articlesFemme  | articleFilter:nom1 | articleFilter1:nom ; let indice=index" >
           <img class="card-img-top" [src]=x.image alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{x.nom|uppercase}}</h5>

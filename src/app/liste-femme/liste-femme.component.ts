@@ -20,6 +20,7 @@ export class ListeFemmeComponent implements OnInit {
   }
   
   /* Rechercher */
+  nom1:String;
   private _nom: String;
   public get nom(): String {
     return this._nom;
@@ -28,12 +29,6 @@ export class ListeFemmeComponent implements OnInit {
     this._nom = value;
   }
 
-  search(){
-    if(this.nom!=""){
-     this.articlesFemme = this.articlesFemme.filter(res=>{
-     return res.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
-   } );
- }}
 
   /* supprimer ligne d'Articles */
   supprimer(index:number){

@@ -9,7 +9,7 @@ export class ArticleService {
   lesArticles:article[]= [
     new article(1,"Veste de smoking Skinny Fit","../assets/article_homme/a1.jpg",800 ,"Polyester",new Date(2017,4,15),true,40),
     new article(2,"Chemise à carreaux","../assets/article_homme/a2.jpg",200 ,"Coton ",new Date(2018,5,25),true,10),
-    new article(3,"Pull col roulé en maille fine","../assets/article_homme/a3.jpg",150 ,"Coton ",new Date(2019,5,5),false,0),
+    new article(3,"Pull col roulé en maille ","../assets/article_homme/a3.jpg",150 ,"Coton ",new Date(2019,5,5),false,0),
     new article(4,"Sweat à capuche avec motif","../assets/article_homme/a4.jpg",300 ,"Coton",new Date(2017,2,26),false,0)
   ];
 

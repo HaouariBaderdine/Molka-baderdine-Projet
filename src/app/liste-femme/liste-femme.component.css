@@ -1,11 +1,30 @@
 nav{width: 450px;margin-left: 400px;}
 input{width: 310px;}
-.card-text{
+#nom11{
     color: rgb(32, 25, 23);
     text-align: center;
 }
 #article{
+    margin-top: 20px;
     margin: 30px;
-    display: flex;
+    height: 1500px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+ 
 }
+.row{
+    border: 1px solid grey;
+    margin: 50px;
+    width: 350px;  
+    height: 300px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+.card-body{border: 1px solid grey;}
+.card-footer{
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+}
+
 
