@@ -14,5 +14,4 @@ export class ArticleFilter1Pipe implements PipeTransform {
 
     return articles.filter(articles=>articles.nom.toLowerCase().indexOf(nom.toLowerCase())!== -1);
   }
-
 }

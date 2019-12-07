@@ -32,6 +32,8 @@ export class ListeFemmeComponent implements OnInit {
 
   /* supprimer ligne d'Articles */
   supprimer(index:number){
+    var c=prompt(" Voulez vous supprimez l'article",c);
+    if(c=="oui"){
     this.articleServiceFemme.supprimerArticleF(index);
-  }
+  }}
 }

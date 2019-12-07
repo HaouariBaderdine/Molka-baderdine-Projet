@@ -8,10 +8,10 @@ export class ArticleFemmeService {
 
   
   articlesFemme:article[]= [
-    new article(1,"Pull col roulé","../assets/article_femme/a1.jpg",20450 ,"Acrylique",new Date(2018,5,27),true,0),
-    new article(2,"Robe longue rou ","../assets/article_femme/a2.jpg",45000 ,"Polyster",new Date(2017,5,6),true,0),
-    new article(3,"Pull en maille fine","../assets/article_femme/a3.jpg",20504 ,"Polyster",new Date(2019,10,27),false,0),
-    new article(4,"Manteau en laine","../assets/article_femme/a4.jpg",20100 ,"Laine",new Date(2018,9,13),false,10)
+    new article(1,"Pull col roulé","../assets/article_femme/a1.jpg",20450 ,"Acrylique",new Date(5,5,2018),true,20),
+    new article(2,"Robe longue rou ","../assets/article_femme/a2.jpg",45000 ,"Polyster",new Date(5,6,2017),true,10),
+    new article(3,"Pull en maille fine","../assets/article_femme/a3.jpg",20504 ,"Polyster",new Date(1,8,2019),false,0),
+    new article(4,"Manteau en laine","../assets/article_femme/a4.jpg",20100 ,"Laine",new Date(13,11,2016),false,0)
   ];
  
   getArticleByMatriculeF(mat : number){

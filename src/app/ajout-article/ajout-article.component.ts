@@ -19,7 +19,7 @@ export class AjoutArticleComponent implements OnInit {
   image:String;
   prix:number;
   type:String;
-  date: string | number | Date;
+  date: Date;
   promos:boolean=false;
   pers:number=0;
   //
@@ -38,7 +38,7 @@ export class AjoutArticleComponent implements OnInit {
   {
     console.log(this.image);
     if(this.sexe=="homme"){
-    if((this.serviceHomme.addArticleHomme1(this.nom,this.image,this.prix,this.type,this.promos,this.pers))==true)
+    if((this.serviceHomme.addArticleHomme(this.nom,this.image,this.prix,this.type,this.date,this.promos,this.pers))==true)
     {
     console.log("insertion d'article homme valid");
     this.submitted=true;
@@ -61,7 +61,7 @@ onVueAjout(){
   this.submitted=false;
   this.nom="";
   this.image="";
-  this.date="";
+  this.date=null;
   this.prix=null;
   this.type="";
 }

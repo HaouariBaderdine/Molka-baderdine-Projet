@@ -28,9 +28,9 @@ export class ModifierComponent implements OnInit {
  image:String="Chemin d'image ";
  prix:number= 0 ;
  type:String=" type d'article";
- date: any=" Date de Fabrication";
- promos:boolean=false;
- pers:number=0;
+ date: Date=new Date('01/01/1999');
+ promos:boolean;
+ pers:number;
  //
  submitted:boolean=false;
  message:String="";

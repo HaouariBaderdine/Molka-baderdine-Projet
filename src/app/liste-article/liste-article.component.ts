@@ -18,7 +18,9 @@ export class ListeArticleComponent implements OnInit {
   constructor(private articleService:ArticleService) { }
 
   supprimer(index:number){
-    this.articleService.supprimerArticle(index)
+    var c=prompt(" Voulez vous supprimez l'article",c);
+    if(c=="oui"){
+    this.articleService.supprimerArticle(index)}
   }
 
   get nom(){

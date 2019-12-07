@@ -21,9 +21,9 @@
     <label for="date">
         Date de Fabrication
     </label>
-    <input type="text" id="date"name="c2" class="form-control" placeholder="Date de Fabrication"
+    <input type="date" id="date"name="c2" class="form-control" placeholder="Date de Fabrication"
      [(ngModel)]="date" #dateE="ngModel" required >
-    <div [hidden]="dateE.errors?.required || dateE.dirty" class="alert alert-danger">
+    <div *ngIf="dateE.errors?.required && dateE.dirty" class="alert alert-danger">
         la date est un champ obligatoire
     </div>
 </div>

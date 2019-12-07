@@ -16,7 +16,7 @@
             </label>
             <select (change)="onChangeS(f)" name="se" id="se1"  class="form-control" [(ngModel)]="selectArticle">
                 <option [value]="y.matricule" *ngFor="let y of articles ; let i= index">
-                    {{y.nom}}
+                   {{y.matricule}} | {{y.nom}}
                 </option>
             </select>
         </div>
@@ -26,7 +26,7 @@
             </label>
             <select (change)="onChangeF(f)" name="seF" id="seF1"  class="form-control" [(ngModel)]="selectArticle">
                 <option [value]="y.matricule" *ngFor="let y of articlesF ; let i= index">
-                    {{y.nom}}
+                    {{y.matricule}} | {{y.nom}}
                 </option>
             </select>
         </div>
@@ -38,10 +38,10 @@
         </label>
         <input type="text" id="nom" name="c1" class="form-control" placeholder="nom Article"
          [(ngModel)]="nom" required="true" #nomE="ngModel" pattern="[A-Z][ a-zA-Z]+">
-        <div [hidden]="nomE.errors?.required || nomE.pristine" class="alert alert-danger">
+        <div [hidden]="!nomE.errors?.required || nomE.pristine" class="alert alert-danger">
             le nom est un champ obligatoire
         </div>
-        <div *ngIf="nomE.errors?.pattern && nomE.dirty" class="alert alert-danger">
+        <div *ngIf="nomE.errors?.pattern && nomE.dirty!" class="alert alert-danger">
             Le nom doit commencer par un majuscule suivie d'au moins 1 caractére
         </div>
     </div>
@@ -51,7 +51,7 @@
     <label for="date">
         Date de Fabrication
     </label>
-    <input type="text" id="date"name="c2" class="form-control" placeholder="Date de Fabrication"
+    <input type="date" id="date"name="c2" class="form-control" placeholder="Date de Fabrication"
      [(ngModel)]="date" #dateE="ngModel" required >
     <div [hidden]="!dateE.errors?.required || dateE.dirty" class="alert alert-danger">
         la date est un champ obligatoire
